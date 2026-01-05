@@ -1,0 +1,7 @@
+.date { /* 時計アイコンと日付のレイアウト担当 */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0.8rem 0;
+  font-size: 1rem;
+}

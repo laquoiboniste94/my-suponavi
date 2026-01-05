@@ -1,0 +1,27 @@
+.footer { /* フッター全体のレイアウト担当 */
+    padding: 16px 24px;
+    text-align: center;
+    color: black;
+    font-size: 0.8rem;
+    margin-top: 80px;
+    border: solid 2px red;
+}
+.nav { /* サイト著作権以外の全体のレイアウト担当 */
+    margin-bottom: 16px;
+}
+.items { /* サイトコンテンツ３つのレイアウト担当 */
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 1rem;
+    white-space: nowrap; /*テキストを折り返さない（改行させない）」という設定*/
+}
+@media (max-width: 640px) {
+    .items {
+        flex-wrap: wrap;
+        gap: 8px 0;
+    }
+    .item {
+        width: 50%;
+    } 
+}

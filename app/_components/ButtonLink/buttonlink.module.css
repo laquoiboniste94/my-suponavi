@@ -1,0 +1,18 @@
+.button {
+    display: block;
+    padding: 20px 40px;
+    border-radius: var(--border-radius);
+    width: 300px;
+    background: url("/arrow-right.svg") no-repeat right 20px center, 
+                darkblue;
+    color: white;
+}
+.button:hover {
+    opacity: 0.6;
+}
+@media (max-width: 640px) {
+    .button {
+        padding: 10px 20px;
+        width: 100%;
+    }
+}

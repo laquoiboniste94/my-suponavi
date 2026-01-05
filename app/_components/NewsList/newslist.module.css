@@ -1,0 +1,49 @@
+.list { /* リスト項目全体のレイアウト担当 */
+  border-bottom: 10px solid darkblue;
+}
+.list:last-child { /* リスト項目に直につながる、画像と文章をまとめるタグのレイアウト担当 */
+  border-bottom: none;
+}
+.link { /* 画像と文章をまとめる部分のレイアウト担当 */
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 24px 0;
+}
+.image { /* ニュース画像のスタイル担当 */
+  width: 200px;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+.title { /* ニュースタイトル文のスタイル担当 */
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.meta { /* ニュースカテゴリ文のレイアウト担当 */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+@media (max-width: 1000px) {
+  .link { /* 画像と文章をまとめる部分のレイアウト担当 */
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px 0;
+    }
+}
+@media (max-width: 640px) {
+  .link { /* 画像と文章をまとめる部分のレイアウト担当 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  padding: 8px 0;
+ }
+.title { /* ニュースタイトル文のスタイル担当 */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+}
