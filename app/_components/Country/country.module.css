@@ -1,5 +1,5 @@
 .tag { /* ニュース国名の文のスタイル担当 */
-  background-color: violet;
+  background-color: greenyellow;
   padding: 4px 12px;
   border-radius: var(--border-radius);
   white-space: nowrap;

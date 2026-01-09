@@ -14,6 +14,11 @@
     height: 38px;
     width: auto;
 }
+.items { /* サイトコンテンツ３つのレイアウト担当 */
+    display: flex;
+    color: white;
+    gap: 40px;
+}
 @media (max-width: 640px) {
     .header { /* ヘッダー全体のレイアウト担当 */
         padding: 24px 16px 8px;

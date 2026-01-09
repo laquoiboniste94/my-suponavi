@@ -1,0 +1,59 @@
+.container { /*全ページ共通レイアウトとしてのメイン画像とタイトル文のレイアウト担当*/
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    overflow: hidden;
+}
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.sub {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.sub::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 20px;
+  background-color: white;
+}
+.sub::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 20px;
+  background-color: white;
+}
+.bgimg { /*全ページ共通レイアウトとしてのメイン画像のスタイル担当*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+  z-index: -1;
+}
+@media (max-width: 640px) {
+  .title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  }
+/*.sub {
+  display: none;
+  }*/
+}

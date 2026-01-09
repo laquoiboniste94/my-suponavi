@@ -1,4 +1,5 @@
 import styles from '../Footer/footer.module.css';
+import Link from 'next/link';
 
 export default function Footer() {
     return (
@@ -6,13 +7,13 @@ export default function Footer() {
             <nav className={styles.nav}>
                 <ul className={styles.items}>
                     <li className={styles.item}>
-                        <a href='/news'>ニュース一覧へ</a>
+                        <Link href='/news'>ニュース一覧へ</Link>
                     </li>
                      <li className={styles.item}>
-                        <a href='/leagues'>主要リーグ紹介</a>
+                        <Link href='/leagues'>主要リーグ紹介</Link>
                     </li>
                      <li className={styles.item}>
-                        <a href='/contact'>お問い合わせ</a>
+                        <Link href='/contact'>お問い合わせ</Link>
                     </li>
                 </ul>
             </nav>

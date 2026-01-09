@@ -1,0 +1,17 @@
+
+.newsLink { /* ニュース一覧への移動リンクのレイアウト担当 */
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+}
+@media (max-width: 640px) {
+  .newsLink {
+    /* コンテナ内に収める */
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 30px auto 0; /* 上部マージンで間隔を空ける */
+    width: 100%;
+    text-align: left;
+  }
+}

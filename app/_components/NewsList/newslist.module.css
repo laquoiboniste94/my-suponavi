@@ -1,5 +1,6 @@
 .list { /* リスト項目全体のレイアウト担当 */
   border-bottom: 10px solid darkblue;
+  width: 100%;
 }
 .list:last-child { /* リスト項目に直につながる、画像と文章をまとめるタグのレイアウト担当 */
   border-bottom: none;
@@ -32,8 +33,14 @@
   gap: 20px;
   padding: 24px 0;
     }
+  .list { /* ニュース欄全体のレイアウト担当 */
+    width: calc(100% - 160px);
+  }
 }
 @media (max-width: 640px) {
+  .list {
+    width: 100%; /* 親要素いっぱいに */
+  }
   .link { /* 画像と文章をまとめる部分のレイアウト担当 */
   display: flex;
   flex-direction: column;
@@ -45,5 +52,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.3rem;
+  }
 }
-}
+
+

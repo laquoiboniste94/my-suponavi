@@ -1,0 +1,63 @@
+.items { /* サイトコンテンツ３つのレイアウト担当 */
+    display: flex;
+    color: white;
+    gap: 40px;
+}
+.hbutton {
+    display: none;
+} 
+.ebutton {
+    display: none;
+} 
+@media (max-width: 640px) {
+    .nav {
+        display: none;
+    }
+    .open {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.9);
+        color: white;
+        padding: 24px 16px;
+        z-index: 1000;
+    }
+      .items {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .ebutton {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .ebutton.ebOn {
+        display: flex;
+        z-index: 1001;
+        color: white;
+    }
+    
+    /* ハンバーガーボタンも同様 */
+    .hbutton {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .hbutton.hbOn {
+        display: flex;
+        z-index: 1001;
+    }
+}

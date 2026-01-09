@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "./_components/Header/header";
 import Footer from "./_components/Footer/footer";
+import Hero from "./_components/Hero/hero";
 
 
 export default function RootLayout({
@@ -12,7 +13,7 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Header />
-        {children}
+        <Hero pageTitle="Number Web" pageSub="海外サッカー最新ニュース">{children}</Hero>
         <Footer />
       </body>
     </html>

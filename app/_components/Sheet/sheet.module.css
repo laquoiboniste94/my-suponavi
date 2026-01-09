@@ -1,0 +1,19 @@
+.container { 
+  position: relative;
+  background-color: skyblue;
+  width: 840px;
+  margin: -40px auto 0;
+  padding: 24px 40px;
+  border-radius: var(--border-radius);
+}
+@media (max-width: 1000px) {
+  .container {
+    width: calc(100% - 160px); /* タブレット用 */
+  }
+}
+@media (max-width: 640px) {
+  .container {
+    width: calc(100% - 32px); /* スマホ用 - これがあるか？ */
+    /* または width: 95%; など */
+  }
+}

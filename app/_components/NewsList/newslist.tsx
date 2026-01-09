@@ -3,6 +3,7 @@ import styles from '../NewsList/newslist.module.css';
 import type { News } from '../../_libs/microcms'
 import Country from "../Country/country";
 import Date from "@/app/Date/date";
+import Link from "next/link";
 
 const noImage = '/no-image.png';
 
@@ -18,7 +19,7 @@ export default function NewsList({ news}: Props) {
         <ul>
           {news.map((article) => (
             <li key={article.id} className={styles.list}> {/* リスト項目全体のレイアウト担当 */}
-            <div className={styles.link}> {/* 画像と文章をまとめる部分のレイアウト担当 */}
+            <Link href={`/news/${article.id}`} className={styles.link}> {/* 画像と文章をまとめる部分のレイアウト担当 */}
               <Image className={styles.image} 
                       src={noImage} alt='No Image'
                       width={400} height={200} /> {/* ニュース画像のスタイル担当 */}
@@ -29,10 +30,9 @@ export default function NewsList({ news}: Props) {
                   <Date publishdate={article.publishedAt} />
                 </dd>
               </dl>
-            </div>
+            </Link>
             </li>
           ))}
-        </ul>
-        
+        </ul> 
     );
 }

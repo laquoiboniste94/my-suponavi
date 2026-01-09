@@ -1,0 +1,64 @@
+.entire { /* Heroとリーグのリストから成る全体のレイアウト担当 */
+
+}
+.container { /* リーグのリストのレイアウト担当 */
+
+}
+.list { /* リストの各項目のレイアウト担当    */
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 10px solid darkblue;
+}
+.list:last-child { /* リスト項目に直につながる、画像と文章をまとめるタグのレイアウト担当 */
+  border-bottom: none;
+}
+.list:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.image { /* リストの画像のスタイル担当 */
+    width: 300px;
+    height: 200px;
+    border-radius: var(--border-radius);
+}
+.name { /* リストのリーグ名のスタイル担当 */
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.competition { /* リストの直近の成績のスタイル担当 */
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 8px;
+}
+.profile { /* リストのリーグの説明文のスタイル担当 */
+    font-size: 1rem;
+}
+.empty {
+    margin-bottom: 40px;
+}
+@media (max-width: 640px) {
+    .list { /* リストの各項目のレイアウト担当    */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 80px;
+    }
+    .list:nth-child(even) {
+    flex-direction: column;
+    }
+    .image { /* リストの画像のスタイル担当 */
+    width: calc(100%-32px);
+    height: auto;
+    border-radius: var(--border-radius);
+    }
+    .name { /* リストのリーグ名のスタイル担当 */
+    font-size: 2.5rem;
+    font-weight: bold;
+    }  
+  
+    
+}
