@@ -1,15 +1,18 @@
 import ButtonLink from '../ButtonLink/buttonlink';
 import NewsList from '../NewsList/newslist';
-import { realData } from '../../_libs/NewsRealData';
 import styles from '../MainpageLayout/mainpagelayout.module.css';
+import { getNewsList } from '@/app/_libs/microcms';
+import { TOP_NEWS_LIMIT } from '@/app/_constants';
 
+export default async function Mainpage() {
 
-export default function Mainpage() {
-  const sliceData = realData.dataList.contents.slice(0,3);
+  const data = await getNewsList({
+    limit: TOP_NEWS_LIMIT,
+  });
 
   return (
     <>
-        <NewsList news={sliceData} />
+        <NewsList news={data.contents} />
         <div className={styles.newsLink}>
           <ButtonLink href="/news">ニュース一覧へ </ButtonLink>
         </div>

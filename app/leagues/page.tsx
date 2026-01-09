@@ -1,8 +1,11 @@
 import Hero from "../_components/Hero/hero";
 import Image from "next/image";
 import styles from '../leagues/page.module.css';
+import { getLeagueList } from "../_libs/microcms";
+import { MEMBERS_LIST_LIMIT } from "../_constants";
 
-const data = {
+
+/*const data = {
     contents: [
         {
             id: "1",
@@ -91,9 +94,12 @@ const data = {
             profile: "かつては3大リーグの草刈り場にすぎない存在だったが、PSGの台頭もあり、欧州の舞台で堅実に存在感を増している。フランス語圏の優位性もありタレントは豊富。"
         },
     ],
-};
+};*/
 
-export default function Page() {
+export default async function Page() {
+
+    const data = await getLeagueList({ limit: MEMBERS_LIST_LIMIT });
+
     return (
             <div className={styles.container}>
                 {data.contents.length === 0 ? (

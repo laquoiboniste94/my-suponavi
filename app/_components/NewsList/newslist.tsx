@@ -20,14 +20,19 @@ export default function NewsList({ news}: Props) {
           {news.map((article) => (
             <li key={article.id} className={styles.list}> {/* リスト項目全体のレイアウト担当 */}
             <Link href={`/news/${article.id}`} className={styles.link}> {/* 画像と文章をまとめる部分のレイアウト担当 */}
-              <Image className={styles.image} 
-                      src={noImage} alt='No Image'
-                      width={400} height={200} /> {/* ニュース画像のスタイル担当 */}
+              {article.image ? (
+                <Image src={article.image.url} alt=""
+                        className={styles.image} width={300} height={200} />
+                        ): (
+                          <Image src={noImage} alt="No Image"
+                        className={styles.image} width={300} height={200} />
+
+                        )} {/* ニュース画像のスタイル担当 */}
               <dl className={styles.content}> {/* ニュース文章のレイアウト担当 */}
                 <dt className={styles.title}>{article.title}</dt> {/* ニュースタイトル文のスタイル担当 */}
                 <dd className={styles.meta}> {/* ニュースカテゴリ文のレイアウト担当 */}
                   <Country country={article.country} /> {/* ニュースカテゴリ文のスタイル担当 */}
-                  <Date publishdate={article.publishedAt} />
+                  <Date publishdate={article.publishedDate} />
                 </dd>
               </dl>
             </Link>

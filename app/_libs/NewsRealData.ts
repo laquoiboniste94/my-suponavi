@@ -1,4 +1,4 @@
-import type { News } from '../_libs/microcms';
+/*import type { News } from '../_libs/microcms';
 
 type DataList = {
   contents: News[];
@@ -35,4 +35,4 @@ export const realData: { dataList: DataList } = {
       },
     ],
   },
-};
+};*/
