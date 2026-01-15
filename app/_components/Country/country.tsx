@@ -1,10 +1,15 @@
 import type { Country } from '../../_libs/microcms';
 import styles from '../Country/country.module.css';
 
-type Props = {
-    country: Country;
+type CountryData = {
+  id: string;
+  name: string;
 };
 
-export default function Country({ country }: Props ) {
+type Props = {
+    country: CountryData;  // ← 修正！
+};
+
+export default function CountryTag({ country }: Props ) {
     return <span className={styles.tag}>{country.name}</span>;
 }

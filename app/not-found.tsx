@@ -1,11 +1,11 @@
 import styles from './not-found.module.css';
-import Hero from './_components/Hero/hero';
+import Subhero from './SubHero/subhero';
 import ButtonLink from './_components/ButtonLink/buttonlink';
 
 export default function NotFound() {
   return (
     <div>
-        <Hero pageTitle='404 Error' pageSub='ページが見つかりません' />
+        <Subhero pageTitle='404 Error' pageSub='ページが見つかりません' />
         <dl className={styles.container}>
           <dt className={styles.title}>準備中</dt>
           <dd className={styles.text}>

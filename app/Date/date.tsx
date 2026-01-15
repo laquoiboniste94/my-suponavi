@@ -1,5 +1,6 @@
 import styles from '../Date/date.module.css';
 import Image from "next/image";
+import { formatDate } from '../_libs/utils';
 
 const clockIcon = '/clock.svg';
 
@@ -12,7 +13,7 @@ export default function Date({ publishdate}: Props) {
         <span className={styles.date}>
             <Image src={clockIcon} alt=""
                 width={16} height={16} priority />
-            {publishdate}
+            {formatDate(publishdate)}
         </span>
     );
 }
