@@ -5,6 +5,7 @@ import { getLeagueList } from "../_libs/microcms";
 import { MEMBERS_LIST_LIMIT } from "../_constants";
 import Link from "next/link";
 import { leagueToNation } from "../_libs/utils";
+import { Leagues, Competition } from "../_libs/microcms";
 
 
 /*const data = {

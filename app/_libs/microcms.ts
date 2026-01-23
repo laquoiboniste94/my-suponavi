@@ -25,7 +25,7 @@ export type News = NewsItem;
 export type Leagues = {
   image: MicroCMSImage;
   name: string;
-  competition: string;
+  competition: Competition;
   profile: string;
 } & MicroCMSListContent;
 
