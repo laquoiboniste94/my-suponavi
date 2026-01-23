@@ -5,7 +5,7 @@ import Article from "@/app/_components/Article/article";
 import ButtonLink from "@/app/_components/ButtonLink/buttonlink";
 import styles from '../[slug]/page.module.css';
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export default async function Page({ params }: { params: Promise<{ slug: string, dk: string }> }) {
   const { slug, dk: draftKey } = await params;
