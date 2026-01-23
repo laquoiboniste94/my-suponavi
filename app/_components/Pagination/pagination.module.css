@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.list {
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.otherPage, .currentPage {
+    display: flex; /* flexで中央揃え */
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* 親要素いっぱい */
+    height: 100%; /* 親要素いっぱい */
+    text-decoration: none;
+}
+
+.otherPage {
+    background-color: white;
+    color: black;
+}
+
+.currentPage {
+    background-color: black;
+    color: white;
+}

@@ -3,7 +3,7 @@ import styles from '../Header/header.module.css';
 import Link from "next/link";
 import Menu from "../Menu/menu";
 
-const headerLogo = "/logo.svg";
+const headerLogo = "/static/logo.svg";
 
 export default function Header() {
     return (

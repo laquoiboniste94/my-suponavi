@@ -3,6 +3,8 @@ import Image from "next/image";
 import styles from '../leagues/page.module.css';
 import { getLeagueList } from "../_libs/microcms";
 import { MEMBERS_LIST_LIMIT } from "../_constants";
+import Link from "next/link";
+import { leagueToNation } from "../_libs/utils";
 
 
 /*const data = {
@@ -107,26 +109,27 @@ export default async function Page() {
                 ) : (
                     <ul>
                         {data.contents.map((league) => (
-                            <li key={league.id} className={styles.list}>
-                                <Image 
-                                    src={league.image.url} alt=""
-                                    width={league.image.width}
-                                    height={league.image.height}
-                                    className={styles.image}/>
-                                <dl>
-                                    <dt className={styles.name}>{league.name}</dt>
-                                    <dd className={styles.results}>自国勢の直近5年の欧州CLでベスト8以上の輩出数</dd>
-                                        <div className={styles.competition}>
-                                            <dd>{league.competition.tFifth}</dd>
-                                            <dd>{league.competition.tFourth}</dd>
-                                            <dd>{league.competition.tThird}</dd>
-                                            <dd>{league.competition.tSecond}</dd>
-                                            <dd>{league.competition.tFirst}</dd>
-                                        </div>
-                                        <dd className={styles.profile}>{league.profile}</dd> 
-                                
-                                </dl>
-                            </li>
+                                <li key={league.id} className={styles.list}>
+                                    <Image 
+                                        src={league.image.url} alt=""
+                                        width={league.image.width}
+                                        height={league.image.height}
+                                        className={styles.image}/>
+                                    <dl>
+                                        <Link href={`/news/country/${leagueToNation(league.name)}`}>
+                                            <dt className={styles.name}>{league.name}</dt>
+                                        </Link>
+                                        <dd className={styles.results}>自国勢の直近5年の欧州CLでベスト8以上の輩出数</dd>
+                                            <div className={styles.competition}>
+                                                <dd>{league.competition.tFifth}</dd>
+                                                <dd>{league.competition.tFourth}</dd>
+                                                <dd>{league.competition.tThird}</dd>
+                                                <dd>{league.competition.tSecond}</dd>
+                                                <dd>{league.competition.tFirst}</dd>
+                                            </div>
+                                        <dd className={styles.profile}>{league.profile}</dd>
+                                    </dl>
+                                </li>
                         ))}
                     </ul>
                 )}

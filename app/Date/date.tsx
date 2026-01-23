@@ -2,7 +2,7 @@ import styles from '../Date/date.module.css';
 import Image from "next/image";
 import { formatDate } from '../_libs/utils';
 
-const clockIcon = '/clock.svg';
+const clockIcon = '/static/clock.svg';
 
 type Props = {
     publishdate: string;

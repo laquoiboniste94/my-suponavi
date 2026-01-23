@@ -5,10 +5,14 @@ import Article from "@/app/_components/Article/article";
 import ButtonLink from "@/app/_components/ButtonLink/buttonlink";
 import styles from '../[slug]/page.module.css';
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  
-  const article = await getNewsDetail(slug).catch(notFound);
+export default async function Page({ params }: { params: Promise<{ slug: string, dk: string }> }) {
+  const { slug, dk: draftKey } = await params;
+  console.log('プレビュー用ページパラメータ:', { slug, draftKey });
+
+  const article = await getNewsDetail(slug, {draftKey: draftKey}).catch(notFound);
+
+  console.log('取得した記事:', article?.id, article?.title);
+ 
   
   return (
     <>

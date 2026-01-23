@@ -65,7 +65,7 @@ export const getNewsList = async (queries?: MicroCMSQueries) => {
 };
 
 // ニュース詳細取得（これが確実に動く！）
-export const getNewsDetail = async (contentId: string) => {
+/*export const getNewsDetail = async (contentId: string) => {
   // Generic型を外して確実に取得
   const detailData = await client.get({
     endpoint: "news",
@@ -76,6 +76,25 @@ export const getNewsDetail = async (contentId: string) => {
   console.log('🔍 getNewsDetail 結果:', {
     id: detailData?.id,
     hasContents: 'contents' in detailData,
+    type: typeof detailData,
+  });
+  
+  return detailData;
+};*/
+// microcms.tsを修正
+export const getNewsDetail = async (
+  contentId: string, 
+  options?: { draftKey?: string }
+) => {
+  const detailData = await client.get({
+    endpoint: "news",
+    contentId,
+    queries: options?.draftKey ? { draftKey: options.draftKey } : undefined,
+  });
+  
+  console.log('🔍 getNewsDetail 結果:', {
+    id: detailData?.id,
+    draftKey: options?.draftKey,
     type: typeof detailData,
   });
   
