@@ -4,6 +4,8 @@ import type {
   MicroCMSImage,
   MicroCMSListContent,
 } from "microcms-js-sdk";
+import { revalidate } from "../news/page";
+
 
 // ========== 型定義 ==========
 // 単一記事の型（詳細ページ用）
@@ -82,7 +84,7 @@ export const getNewsList = async (queries?: MicroCMSQueries) => {
   return detailData;
 };*/
 // microcms.tsを修正
-export const getNewsDetail = async (
+/*export const getNewsDetail = async (
   contentId: string, 
   options?: { draftKey?: string }
 ) => {
@@ -90,6 +92,11 @@ export const getNewsDetail = async (
     endpoint: "news",
     contentId,
     queries: options?.draftKey ? { draftKey: options.draftKey } : undefined,
+    customRequestInit: {
+      next: {
+        revalidate: options?.draftKey === undefined ? 60 : 0,
+      },
+    },
   });
   
   console.log('🔍 getNewsDetail 結果:', {
@@ -98,6 +105,50 @@ export const getNewsDetail = async (
     type: typeof detailData,
   });
   
+  return detailData;
+};*/
+
+export const getNewsDetail = async (
+  contentId: string, 
+  options?: { draftKey?: string }
+) => {
+  const apiKey: string = process.env.MICROCMS_API_KEY!;
+  const serviceDomain = process.env.MICROCMS_SERVICE_DOMAIN;
+
+  const draftKey = options?.draftKey;
+  const baseUrl = `https://${serviceDomain}.microcms.io/api/v1`;
+  
+  // クエリパラメータ構築
+  const params = new URLSearchParams();
+  if (draftKey) {
+    params.set('draftKey', draftKey);
+  }
+  
+  const queryString = params.toString();
+  const url = `${baseUrl}/news/${contentId}${queryString ? '?' + queryString : ''}`;
+  
+  console.log('🔍 getNewsDetail:', {
+    url,
+    draftKey: draftKey || 'なし',
+    revalidate: draftKey ? 0 : 60,
+  });
+  
+  const response = await fetch(url, {
+    headers: {
+      'X-MICROCMS-API-KEY': apiKey,
+      'Content-Type': 'application/json',
+    },
+    // Next.jsのfetch拡張機能
+    next: {
+      revalidate: draftKey ? 0 : 60,
+    },
+  });
+  
+  if (!response.ok) {
+    throw new Error(`記事取得失敗: ${response.status} ${response.statusText}`);
+  }
+  
+  const detailData = await response.json();
   return detailData;
 };
 
@@ -186,3 +237,5 @@ export const getNewsDetail = async (
   });
   return detailData;
 };*/
+
+

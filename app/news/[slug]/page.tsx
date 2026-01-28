@@ -5,7 +5,6 @@ import Article from "@/app/_components/Article/article";
 import ButtonLink from "@/app/_components/ButtonLink/buttonlink";
 import styles from '../[slug]/page.module.css';
 
-export const revalidate = 60;
 
 export default async function Page({ params }: { params: Promise<{ slug: string, dk: string }> }) {
   const { slug, dk: draftKey } = await params;
@@ -22,7 +21,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string,
             <Article data={article} />
         </div>
         <div className={styles.footer}>
-            <ButtonLink href="news">ニュース一覧へ戻る</ButtonLink>
+            <ButtonLink href="/news">ニュース一覧へ戻る</ButtonLink>
         </div>
     </>
   );

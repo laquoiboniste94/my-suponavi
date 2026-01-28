@@ -4,7 +4,6 @@ import NewsList from "@/app/_components/NewsList/newslist";
 import { NEWS_LIST_LIMIT } from "@/app/_constants";
 import Pagination from "@/app/_components/Pagination/pagination";
 
-
 const pagenationNum = NEWS_LIST_LIMIT;
 
 export default async function Page({ params }: { params : Promise <{current: string}>} ) {
