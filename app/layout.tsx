@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "./_components/Header/header";
 import Footer from "./_components/Footer/footer";
 import Hero from "./_components/Hero/hero";
+import { SimpleAuth } from "./_components/BasicAuth/basicauth";
 
 
 export default function RootLayout({
@@ -12,9 +13,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Header />
-        <Hero pageTitle="Number Web" pageSub="海外サッカー最新ニュース">{children}</Hero>
-        <Footer />
+            <Header />
+            <Hero pageTitle="Number Web" pageSub="海外サッカー最新ニュース">{children}</Hero>
+            <Footer />
       </body>
     </html>
   );
