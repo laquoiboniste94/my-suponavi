@@ -4,7 +4,7 @@ import type {
   MicroCMSImage,
   MicroCMSListContent,
 } from "microcms-js-sdk";
-import { revalidate } from "../news/page";
+const revalidate = 60;
 
 
 // ========== 型定義 ==========

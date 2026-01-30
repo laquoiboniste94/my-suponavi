@@ -37,7 +37,7 @@ export default function Menu() {
                         <Link href='/leagues'>主要リーグ紹介</Link>
                     </li>
                      <li className={styles.item}>
-                        <Link href='/contact'>お問い合わせ</Link>
+                        <Link href='/contact'>会員登録</Link>
                     </li>
                 </ul>
             </nav>
